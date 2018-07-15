@@ -11,6 +11,7 @@ spec:
     spec:
       containers:
       - name: k8s-node-server
-        image: k8s-node-template:test
+        image: gokulpersonal.azurecr.io/k8s-node-template:1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000

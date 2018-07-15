@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8s-node-template-ingress
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: node-demo.c36f1deacb4043baa20a.australiaeast.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: k8s-node-server-service
+          servicePort: 5000
+        path: /
